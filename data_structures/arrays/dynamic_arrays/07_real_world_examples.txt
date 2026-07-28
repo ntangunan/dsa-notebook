@@ -1,0 +1,132 @@
+===========================================
+REAL-WORLD USES OF DYNAMIC ARRAYS
+===========================================
+
+Dynamic arrays are used whenever the number of elements can change over time while fast access by index is important.
+
+1. Social Media
+---------------
+• News feed posts
+• Friends/followers lists
+• Comments on a post
+• Notifications
+
+Why?
+Users can continuously add new posts or comments, and the application needs fast access to display them.
+
+-------------------------------------------
+
+2. E-Commerce
+-------------
+• Shopping cart items
+• Product search results
+• Wishlist items
+• Recently viewed products
+
+Why?
+Items are frequently added or removed, and the total number is unknown.
+
+-------------------------------------------
+
+3. Web Browsers
+---------------
+• Open tabs
+• Browsing history
+• Download list
+
+Why?
+Tabs and history entries grow and shrink during use.
+
+-------------------------------------------
+
+4. Video Games
+--------------
+• Player inventory
+• Active enemies
+• Bullets/projectiles
+• Leaderboards
+
+Why?
+Objects are constantly created and removed during gameplay.
+
+-------------------------------------------
+
+5. File Systems
+---------------
+• Files in a folder
+• Search results
+• Recently opened files
+
+Why?
+Files can be created, deleted, or moved at any time.
+
+-------------------------------------------
+
+6. Music & Streaming Apps
+-------------------------
+• Playlist songs
+• Queue of upcoming songs
+• Favorite songs
+• Recommended content
+
+Why?
+Users frequently add, remove, or reorder items.
+
+-------------------------------------------
+
+7. Data Processing
+------------------
+• Reading lines from a file
+• CSV data
+• Log entries
+• Sensor readings
+
+Why?
+The amount of data is often unknown before reading.
+
+-------------------------------------------
+
+8. Robotics & Embedded Systems
+------------------------------
+• Sensor measurements
+• Camera frames
+• Detected objects
+• Navigation waypoints
+
+Why?
+The robot continuously collects data while running.
+
+-------------------------------------------
+
+9. Machine Learning
+-------------------
+• Training samples
+• Prediction results
+• Feature vectors
+• Batch processing
+
+Why?
+Datasets are often built dynamically before processing.
+
+-------------------------------------------
+
+10. Operating Systems
+---------------------
+• Running processes
+• Open windows
+• Connected devices
+• Event queues
+
+Why?
+Processes and devices are constantly being added and removed.
+
+===========================================
+WHY DYNAMIC ARRAYS?
+===========================================
+
+Dynamic arrays are chosen because they provide:
+• Automatic resizing
+• O(1) random access
+• O(1) amortized append
+• Fast iteration
+• Efficient memory usage

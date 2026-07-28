@@ -1,0 +1,34 @@
+===========================================
+WHEN TO USE DYNAMIC ARRAY
+===========================================
+Use a dynamic array when:
+
+• The number of elements is unknown or changes over time.
+• You need fast random access (O(1)) using an index.
+• Most insertions and deletions occur at the end.
+• You frequently iterate through all elements.
+• You need a simple, general-purpose data structure.
+
+Common Use Cases
+----------------
+• Storing a list of users, products, or files
+• Maintaining a collection of search results
+• Implementing stacks
+• Storing game objects or inventory items
+• Reading data from a file when the size is unknown
+• LeetCode and coding interview problems involving arrays
+
+Avoid Using When
+----------------
+• Frequent insertions or deletions occur at the beginning or middle (consider a linked list or deque).
+• You need constant-time key/value lookups (use a hash table/dictionary).
+• Data must remain sorted while supporting frequent insertions and deletions (use a balanced binary search tree or another ordered structure).
+• The collection size is fixed and known in advance (a static array may be more appropriate).
+
+Python Note
+-----------
+Python's built-in `list` is a dynamic array and should be your default choice for most ordered collections because it provides:
+• O(1) random access
+• O(1) amortized append
+• Automatic resizing
+• Excellent iteration performance

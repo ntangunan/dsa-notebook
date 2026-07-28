@@ -1,0 +1,211 @@
+===========================================
+COMMON INTERVIEW PATTERNS FOR DYNAMIC ARRAYS
+===========================================
+
+1. Traversal
+------------
+Visit every element exactly once.
+
+Common Operations:
+- Sum
+- Count
+- Find max/min
+- Filter values
+
+Time: O(n)
+
+Example:
+[1, 2, 3, 4]
+
+↓
+
+Visit
+1 → 2 → 3 → 4
+
+-------------------------------------------
+
+2. Two Pointers
+---------------
+Use two indices that move toward each other or in the same direction.
+
+Common Problems:
+- Two Sum (sorted)
+- Remove duplicates
+- Reverse array
+- Move zeroes
+- Container With Most Water
+
+Example:
+
+L             R
+↓             ↓
+[1,2,3,4,5,6]
+
+-------------------------------------------
+
+3. Sliding Window
+-----------------
+Maintain a window over a contiguous portion of the array.
+
+Common Problems:
+- Longest substring
+- Maximum sum subarray
+- Minimum window substring
+- Longest repeating character replacement
+
+Example:
+
+[1,2,3,4,5]
+
+Window
+
+    ┌───────┐
+    │2 3 4│
+    └───────┘
+
+-------------------------------------------
+
+4. Prefix Sum
+-------------
+Precompute cumulative sums to answer range queries quickly.
+
+Common Problems:
+- Range Sum Query
+- Subarray Sum Equals K
+- Running Sum
+
+Example:
+
+Array:
+[2,4,6,8]
+
+Prefix:
+[2,6,12,20]
+
+-------------------------------------------
+
+5. Binary Search
+----------------
+Repeatedly divide a sorted array in half.
+
+Requires:
+- Sorted array
+
+Common Problems:
+- Search Insert Position
+- First/Last Position
+- Peak Element
+
+Time: O(log n)
+
+-------------------------------------------
+
+6. Fast & Slow Pointers
+-----------------------
+Two pointers move at different speeds.
+
+Common Problems:
+- Cycle detection
+- Find middle element
+
+Usually seen with linked lists, but occasionally arrays.
+
+-------------------------------------------
+
+7. In-Place Modification
+------------------------
+Modify the array without using another array.
+
+Common Problems:
+- Remove Element
+- Remove Duplicates
+- Rotate Array
+- Reverse Array
+
+Extra Space: O(1)
+
+-------------------------------------------
+
+8. Sorting + Processing
+------------------------
+Sort first, then solve.
+
+Common Problems:
+- Merge Intervals
+- Three Sum
+- Meeting Rooms
+- Group Anagrams (sometimes)
+
+Time:
+Sorting = O(n log n)
+
+-------------------------------------------
+
+9. Frequency Counting
+---------------------
+Count occurrences of elements.
+
+Common Structures:
+- Dictionary (Hash Map)
+- Array
+
+Common Problems:
+- Valid Anagram
+- Top K Frequent
+- Majority Element
+
+-------------------------------------------
+
+10. Matrix Traversal
+--------------------
+Treat a 2D array as rows and columns.
+
+Common Problems:
+- Spiral Matrix
+- Number of Islands
+- Rotate Image
+- Set Matrix Zeroes
+
+Example:
+
+1 2 3
+4 5 6
+7 8 9
+
+-------------------------------------------
+
+11. Simulation
+--------------
+Follow the problem statement exactly by updating the array step by step.
+
+Common Problems:
+- Game of Life
+- Rotate Array
+- Baseball Game
+
+-------------------------------------------
+
+12. Greedy with Arrays
+----------------------
+Make the locally optimal choice at each step.
+
+Common Problems:
+- Jump Game
+- Gas Station
+- Candy
+
+===========================================
+MOST IMPORTANT PATTERNS
+===========================================
+
+★★★★★ Traversal
+★★★★★ Two Pointers
+★★★★★ Sliding Window
+★★★★★ Prefix Sum
+★★★★★ Binary Search
+★★★★☆ In-Place Modification
+★★★★☆ Frequency Counting
+★★★☆☆ Sorting + Processing
+★★★☆☆ Matrix Traversal
+★★☆☆☆ Simulation
+★★☆☆☆ Greedy

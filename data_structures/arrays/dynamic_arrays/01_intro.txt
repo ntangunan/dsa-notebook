@@ -1,0 +1,211 @@
+===========================================
+INTRODUCTION TO DYNAMIC ARRAYS
+===========================================
+
+Definition:
+    - a resizable array that automatically grows/shrinks as elements are added or removed 
+    - don't need to specify size before initialization
+    - when current storage is full, it allocates a bigger block of memory, copies the existing elements into it, and continues storing new elements
+
+Why was it invented?
+---------------------------------
+    - to overcome the limitations of a static array (which has a fixed size)
+
+How does it work?
+---------------------------------
+    - maintains...
+        1. size (how many elements currenty stored)
+        2. capacity (how many elemets can fit before array needs to grow) 
+    
+    - steps:
+        1. create the dynamic array with a size and capacity
+        2. add elements
+        3. fill the array (till its full)
+        4. add one more element (now no more room)
+            a. allocate a larger block (double capacity)
+            b. copy every element to array (new memory)
+            c. free old memory (discard original array)
+
+Advantages
+---------------------------------
+    - fast random access: O(1)
+        - elements are stored in contiguous memory
+        - can access any element directly using its index
+    - automatic resizing
+        - don't need to know in advance how many elements you will store
+    - fast appending: O(1)
+    - memory efficient compared to linked lists
+    - excellent cache performance
+    - simple use
+
+Disadvantages
+---------------------------------
+    - occasional expensive resizing: O(n)
+        - when array becomes full:
+            - larger block of memory must be allocated
+            - every element must be allocated
+            - the old memory is freed
+    - slow insertions/deletions in the middle O(n)
+        - every element after an insertion must shift one position to the right (insert) or left (deletion)
+    - extra unused memory (usually more capacity allocated than currently needed)
+    - requires contiguous memory
+        - if memory becomes fragmented and a large contiguous block is unavailable, resizing becomes difficult/fails
+
+Visual Diagram
+---------------------------------
+    Size = 3
+    Capacity = 4
+
+    Index:      0      1      2      3
+             ┌─────┬─────┬─────┬─────┐
+    Memory:  │ 10  │ 20  │ 30  │     │
+             └─────┴─────┴─────┴─────┘
+
+Memory Layout
+---------------------------------
+                    Python List Object
+            ┌──────────────────────────────┐
+            │ Size = 4                     │
+            │ Capacity = 8                 │
+            │ Pointer ─────────────────┐   │
+            └──────────────────────────┼───┘
+                                       │
+                                       ▼
+
+            Contiguous Array of References
+    ┌────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┐
+    │   ●    │   ●    │   ●    │   ●    │        │        │        │        │
+    └────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+        │         │         │         │
+        ▼         ▼         ▼         ▼
+
+    ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐
+    │  10  │ │  20  │ │  30  │ │  40  │
+    └──────┘ └──────┘ └──────┘ └──────┘
+
+Comparison with other structures
+---------------------------------
+1. Dynamic Array vs. Static Array
+---------------------------------
+Static Array
+- Fixed size
+- Cannot grow
+- O(1) indexing
+
+Dynamic Array
+- Resizable
+- O(1) indexing
+- O(1) amortized append
+
+Use Dynamic Arrays when the number of elements is unknown.
+
+---------------------------------------------------
+
+2. Dynamic Array vs. Linked List
+--------------------------------
+
+Dynamic Array
++----+----+----+----+
+|10  |20  |30  |40  |
++----+----+----+----+
+
+Linked List
+10 → 20 → 30 → 40
+
+Comparison
+
+Operation           Dynamic Array   Linked List
+-----------------------------------------------
+Access              O(1)            O(n)
+Search              O(n)            O(n)
+Append              O(1)*           O(1)**
+Insert/Delete Mid   O(n)            O(1)***
+
+* Amortized
+** With tail pointer
+*** Given a reference to the node
+
+Use Linked Lists when frequent insertions/deletions are needed.
+
+---------------------------------------------------
+
+3. Dynamic Array vs. Stack
+--------------------------
+
+A stack is an ADT commonly implemented using a dynamic array.
+
+push() → O(1) amortized
+pop()  → O(1)
+
+Use for:
+- Undo/Redo
+- DFS
+- Function calls
+
+---------------------------------------------------
+
+4. Dynamic Array vs. Queue
+--------------------------
+
+Queue (FIFO)
+
+Front                Back
+[10][20][30][40]
+
+Dequeue shifts elements → O(n)
+
+Queues are usually implemented with:
+- Circular Buffer
+- Linked List
+
+---------------------------------------------------
+
+5. Dynamic Array vs. Hash Table
+-------------------------------
+
+Dynamic Array
+- Access by index
+- O(1) indexing
+
+Hash Table
+- Access by key
+- O(1) average lookup
+
+Use Hash Tables for dictionaries, maps, and sets.
+
+---------------------------------------------------
+
+6. Dynamic Array vs. Balanced BST
+---------------------------------
+
+Operation        Dynamic Array   Balanced BST
+---------------------------------------------
+Search           O(n)*           O(log n)
+Insert/Delete    O(n)            O(log n)
+
+* O(log n) if sorted + binary search
+
+Use BSTs when data must remain sorted.
+
+---------------------------------------------------
+
+Quick Summary
+--------------
+
+Need fast indexing?
+→ Dynamic Array
+
+Need fast key lookups?
+→ Hash Table
+
+Need sorted data?
+→ Balanced BST
+
+Need many insertions/deletions?
+→ Linked List
+
+Need LIFO?
+→ Stack
+
+Need FIFO?
+→ Queue
