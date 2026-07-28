@@ -1,5 +1,4 @@
-INTRODUCTION TO'<NAME_OF_DSA>'
-==============
+INTRODUCTION TO '<NAME_OF_DSA>'
 
 Definition: 
 

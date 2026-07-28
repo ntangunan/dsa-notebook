@@ -1,5 +1,5 @@
 '''
-<NAME_OF_DSA> IMPLEMENTATION
+'<NAME_OF_DSA>' IMPLEMENTATION
 '''
 
 # implementation: 
