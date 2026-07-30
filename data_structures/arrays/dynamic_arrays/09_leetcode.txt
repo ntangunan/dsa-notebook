@@ -29,9 +29,12 @@ Output:
 Time: O(n)
 Space: O(1)
 
+Takeaways:
+- can only be done in O(n)
+
 ---------------------------------------------------
 
-🟢 217. Contains Duplicate
+🟢 217. Contains Duplicate COMPLETE
 
 https://leetcode.com/problems/contains-duplicate/
 
@@ -46,6 +49,12 @@ Output:
 true
 
 Time: O(n)
+
+Takeaways:
+- first attempt was in O(n^2)
+    - compared each index to all other indecies
+- second attempt was in O(n)
+    - utilized sort() function which allowed guaranteed duplicate neighbor checks
 
 ---------------------------------------------------
 
